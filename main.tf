@@ -23,7 +23,7 @@ resource "azurerm_app_service_plan" "test" {
 }
 
 resource "azurerm_function_app" "test" {
-  name                      = "test-azure-functions"
+  name                      = "test-azure-functions121"
   location                  = "${azurerm_resource_group.test.location}"
   resource_group_name       = "${azurerm_resource_group.test.name}"
   app_service_plan_id       = "${azurerm_app_service_plan.test.id}"
