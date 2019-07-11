@@ -1,10 +1,10 @@
 resource "azurerm_resource_group" "test" {
-  name     = "azure-functions-test-rg"
+  name     = "azure-functions-121"
   location = "westus2"
 }
 
 resource "azurerm_storage_account" "test" {
-  name                     = "functionsappsa121"
+  name                     = "functionsapptestsa121"
   resource_group_name      = "${azurerm_resource_group.test.name}"
   location                 = "${azurerm_resource_group.test.location}"
   account_tier             = "Standard"
@@ -12,7 +12,7 @@ resource "azurerm_storage_account" "test" {
 }
 
 resource "azurerm_app_service_plan" "test" {
-  name                = "azure-functions-test-service-plan"
+  name                = "azure-functions-test-service-plan-121"
   location            = "${azurerm_resource_group.test.location}"
   resource_group_name = "${azurerm_resource_group.test.name}"
 
@@ -23,7 +23,7 @@ resource "azurerm_app_service_plan" "test" {
 }
 
 resource "azurerm_function_app" "test" {
-  name                      = "test-azure-functions121"
+  name                      = "test-azure-functions-121"
   location                  = "${azurerm_resource_group.test.location}"
   resource_group_name       = "${azurerm_resource_group.test.name}"
   app_service_plan_id       = "${azurerm_app_service_plan.test.id}"
